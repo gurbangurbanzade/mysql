@@ -9,7 +9,7 @@ app.use(bodyParser.json());
 // });
 
 let connection = mysql.createConnection({
-  host: "localhost",
+  host: "127.0.0.1",
   user: "root",
   password: "300793mm",
   database: "students",
