@@ -60,8 +60,9 @@ app.delete("/student/:id", (req, res) => {
 // post method
 app.post("/student/", (req, res) => {
   let obj = req.body;
+  console.log(obj);
   connection.query(
-    `INSERT INTO student (ID, LastName, FirstName)
+    `INSERT INTO Persons (ID, LastName, FirstName)
     VALUES ("${obj.ID}", "${obj.LastName}", "${obj.FirstName}")`,
     function (err, result, fields) {
       //   console.log(result);
