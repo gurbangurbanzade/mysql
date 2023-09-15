@@ -34,7 +34,7 @@ app.get("/student", function (req, res) {
 app.get("/student/:id", (req, res) => {
   const elem = req.params;
   // sql id get method
-  connection.query("select * from student", function (err, result, fields) {
+  connection.query("select * from Persons", function (err, result, fields) {
     // console.log(result);
     for (let i = 0; i < result.length; i++) {
       if (elem.id == result[i].ID) {
@@ -61,8 +61,8 @@ app.delete("/student/:id", (req, res) => {
 app.post("/student/", (req, res) => {
   let obj = req.body;
   connection.query(
-    `INSERT INTO student (ID, ad, soyad, unvanid)
-    VALUES ("${obj.ID}", "${obj.ad}", "${obj.soyad}", "${obj.unvanId}")`,
+    `INSERT INTO student (ID, LastName, FirstName)
+    VALUES ("${obj.ID}", "${obj.LastName}", "${obj.FirstName}")`,
     function (err, result, fields) {
       //   console.log(result);
       //   app.get("/student", function (req, res) {
@@ -70,7 +70,7 @@ app.post("/student/", (req, res) => {
       //   });
     }
   );
-  connection.query("select * from student", function (err, result, fields) {
+  connection.query("select * from Persons", function (err, result, fields) {
     //   console.log(err);
     console.log(result);
     res.send(result);
