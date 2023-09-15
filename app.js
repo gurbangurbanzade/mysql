@@ -9,16 +9,16 @@ app.use(bodyParser.json());
 // });
 
 let connection = mysql.createConnection({
-  host: "127.0.0.1",
-  user: "root",
-  password: "300793mm",
-  database: "students",
+  host: "bodetuxf0l8rtbxz1aqs-mysql.services.clever-cloud.com",
+  user: "uazjsfzluuhhhnbi",
+  password: "ehvCode5MBl4q14QJwdu",
+  database: "bodetuxf0l8rtbxz1aqs",
 });
 
 // // api get method
 
 app.get("/student", function (req, res) {
-  connection.query("select * from student", function (err, result, fields) {
+  connection.query("select * from Persons", function (err, result, fields) {
     //   console.log(err);
     //   console.log(result);
     //   console.log(fields);
@@ -77,4 +77,4 @@ app.post("/student/", (req, res) => {
   });
 });
 
-app.listen(process.env.PORT || 3306);
+app.listen(process.env.PORT || 3000);
